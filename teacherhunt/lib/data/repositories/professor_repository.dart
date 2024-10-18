@@ -12,9 +12,9 @@ class ProfessorRepository {
 
   Future<http.Response> save({required Map<String, dynamic> data, int? id}) async {
     if (id == null) {
-      return await _apiClient.post('/professores', data: data);
+      return await _apiClient.post('https://127.0.0.1:8000/api/professores', data: data);
     }
-    return await _apiClient.put('/professores', data: data);
+    return await _apiClient.put('https://127.0.0.1:8000/api/professores', data: data);
   }
 
   Future<http.Response> saveFotoProfessor({required image, required int professorId}) async {
